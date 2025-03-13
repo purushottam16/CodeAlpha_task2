@@ -1,0 +1,118 @@
+Step 1: Install Visual Studio Code and Python
+Install VS Code:
+
+Go to the VS Code download page and install it for your operating system.
+Install Python:
+
+If Python is not installed, download and install it from the official Python website.
+Verify Python Installation: Open your terminal (Command Prompt or VS Code integrated terminal) and type:
+
+bash
+Copy
+python --version
+You should see the installed Python version.
+
+Install Python extension in VS Code:
+
+Open VS Code.
+Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side of VS Code.
+Search for Python and click Install on the Python extension by Microsoft.
+Step 2: Set Up the Project in VS Code
+Create a New Folder for Your Project:
+
+Create a new folder on your computer where you want to store the chatbot project (e.g., faq-chatbot).
+Open VS Code and Open the Folder:
+
+Open VS Code.
+Go to File > Open Folder and select the folder you just created.
+Create a New Python File:
+
+Inside VS Code, click on File > New File.
+Save it as chatbot.py in the opened folder.
+Step 3: Write the Code for the Chatbot
+Write the chatbot code: Copy and paste the following Python code into chatbot.py:
+python
+Copy
+faq = {
+    "what are your business hours?": "Our business hours are Monday to Friday, 9 AM to 6 PM.",
+    "where are you located?": "We are located at 123 Main St, Springfield.",
+    "how can I contact customer support?": "You can contact customer support at support@example.com or call us at (123) 456-7890.",
+    "do you offer international shipping?": "Yes, we offer international shipping to most countries.",
+    "what is your return policy?": "We offer a 30-day return policy on all products.",
+    "how can I track my order?": "You can track your order using the tracking number sent to your email."
+}
+
+def chatbot():
+    print("Welcome to the Customer Support Chatbot. Type 'exit' to end.")
+    while True:
+        user_input = input("You: ").lower()
+        if user_input == 'exit':
+            print("Goodbye!")
+            break
+        response = faq.get(user_input, "Sorry, I don't have an answer for that.")
+        print(f"Bot: {response}")
+
+if __name__ == "__main__":
+    chatbot()
+Step 4: Run the Program
+Open the Integrated Terminal in VS Code:
+
+In VS Code, click Terminal in the top menu and select New Terminal.
+Run the Python File:
+
+In the terminal, make sure you're in the project folder where chatbot.py is saved.
+Run the chatbot program by typing the following command:
+bash
+Copy
+python chatbot.py
+Interact with the Chatbot:
+
+The chatbot will ask for user input. You can type any of the FAQ questions (like "what are your business hours?") and get a response.
+To end the conversation, type exit.
+Step 5: Testing and Debugging
+Test FAQ Responses:
+
+Try typing the questions listed in the faq dictionary (e.g., "where are you located?") to see the chatbot respond.
+Handle Unrecognized Inputs:
+
+If you type something that is not in the faq dictionary, the chatbot will respond with "Sorry, I don't have an answer for that.".
+Debug if Necessary:
+
+If there are any issues, check for any errors in the terminal and fix the code accordingly. The code should be simple, so errors are usually related to syntax.
+Step 6: Customize and Extend the Chatbot (Optional)
+Add More FAQ Questions:
+
+You can expand the faq dictionary by adding more common questions and responses.
+Handle Variations in Input:
+
+Right now, the program only responds to exact questions. To make it more flexible, you could add code to normalize or match similar questions using regular expressions.
+Create a GUI (Optional):
+
+If you want to create a graphical user interface (GUI) for your chatbot, you can use Tkinter or PyQt for a more user-friendly experience.
+Step 7: Commit to GitHub (Optional)
+Initialize a Git Repository:
+
+In the terminal, initialize a new Git repository by running:
+bash
+Copy
+git init
+Add Files to Git:
+
+Stage the files for commit:
+bash
+Copy
+git add .
+Commit the Files:
+
+Commit the files:
+bash
+Copy
+git commit -m "Initial commit for FAQ chatbot"
+Push to GitHub:
+
+Create a new repository on GitHub and follow the instructions to push your code to GitHub.
+Conclusion
+At this point, you have created a simple FAQ chatbot in Python using VS Code. The chatbot responds to user input based on predefined questions and answers stored in a dictionary. You can further customize and expand the bot as needed.
+
+
+
